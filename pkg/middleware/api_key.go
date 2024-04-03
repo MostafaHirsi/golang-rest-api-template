@@ -1,6 +1,7 @@
 package middleware
 
 import (
+	"fmt"
 	"net/http"
 	"os"
 
@@ -10,6 +11,8 @@ import (
 func APIKeyAuth() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		apiKey := c.GetHeader("X-API-Key")
+		fmt.Println("X-API-Key: ", apiKey)
+		fmt.Println("API_SECRET_KEY: ", os.Getenv("API_SECRET_KEY"))
 		if apiKey == os.Getenv("API_SECRET_KEY") {
 			c.Next()
 		} else {
