@@ -10,7 +10,7 @@ up:
 	docker compose up --detach
 
 swag:
-	docker run -p 80:8080 -e SWAGGER_JSON=/mnt/swagger.json -v /Users/mostafahirsi/Documents/github_projects/golang-rest-api-template/docs:/mnt  swaggerapi/swagger-ui
+	docker run -p 80:8080 -e SWAGGER_JSON=/mnt/swagger.json -v /docs:/mnt  swaggerapi/swagger-ui
 
 push-swag:
 	scp -i ed-key.pem docs/docs.go docs/swagger.json docs/swagger.yaml ec2-user@54.173.37.111:/home/ec2-user/golang-rest-api-template/docs
