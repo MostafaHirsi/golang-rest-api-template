@@ -48,4 +48,4 @@ services:
     volumes:
       - ./docs/swagger.json:/swagger.json
     environment:
-      - SWAGGER_JSON=/mnt/swagger.json
+      - SWAGGER_JSON=/swagger.json
